@@ -422,6 +422,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: sprite_forward
       objectReference: {fileID: 0}
+    - target: {fileID: 4555936020286180656, guid: dcda4a41db42ba740b583fd901fc6700,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4555936020286180670, guid: dcda4a41db42ba740b583fd901fc6700,
         type: 3}
       propertyPath: m_LocalPosition.x
