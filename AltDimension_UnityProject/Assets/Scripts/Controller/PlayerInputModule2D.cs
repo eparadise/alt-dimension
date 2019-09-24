@@ -23,7 +23,7 @@ public class PlayerInputModule2D : MonoBehaviour
 
 	void Update ()
 	{
-		Vector2 input = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
+		Vector2 input = new Vector2 (Input.GetAxisRaw ("Horizontal"), 0);
 		if (input.magnitude > 1) {
 			input.Normalize ();
 		}
