@@ -24,7 +24,7 @@ public class AltPlayerInputModule2D : MonoBehaviour
 
     void Update()
     {
-        Vector2 input = new Vector2(-Input.GetAxisRaw("Horizontal"), 0);
+        Vector2 input = new Vector2(-Input.GetAxisRaw("Horizontal"), -Input.GetAxisRaw("Vertical"));
         if (input.magnitude > 1)
         {
             input.Normalize();
