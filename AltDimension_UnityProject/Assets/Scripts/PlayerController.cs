@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private static int lives = 3;
     private int orbCount = 0;
     private UIHealthPanel hpanel;
+ 
     // Start is called before the first frame update
     void Start()
     {
