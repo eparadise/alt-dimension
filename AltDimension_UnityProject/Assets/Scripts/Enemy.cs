@@ -51,12 +51,12 @@ public class Enemy : MonoBehaviour
             if(movingRight)
             {
                 velocity.x = -speed;
-                
+                transform.localRotation = Quaternion.Euler(0, 180, 0);
             }
             else
             {
                 velocity.x = speed;
-                
+                transform.localRotation = Quaternion.Euler(0, 0, 0);
             }
         }
         else
