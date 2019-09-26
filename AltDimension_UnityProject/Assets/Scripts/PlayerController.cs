@@ -8,10 +8,11 @@ public class PlayerController : MonoBehaviour
 
     private static int lives = 3;
     private int orbCount = 0;
+    private UIHealthPanel hpanel;
     // Start is called before the first frame update
     void Start()
     {
-        
+        hpanel = GameObject.FindObjectOfType<UIHealthPanel>();
     }
 
     // Update is called once per frame
@@ -30,6 +31,10 @@ public class PlayerController : MonoBehaviour
             {
                 //open door
             }
+        }
+        if (collision.gameObject.CompareTag("Enemy")) {
+            lives--;
+            hpanel.UpdateHearts(lives);
         }
     }
 }
