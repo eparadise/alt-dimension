@@ -45,8 +45,6 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        Vector2 velocity = myRb2D.velocity;
-
         if (timeLeft < 0)
         {
             timeLeft = 1.5f;
@@ -55,30 +53,18 @@ public class Enemy : MonoBehaviour
 
         if (switchDirections)
         {
-            if(movingRight)
-            {
-                velocity.x = -speed;
-                transform.localRotation = Quaternion.Euler(0, 180, 0);
-            }
-            else
-            {
-                velocity.x = speed;
-                transform.localRotation = Quaternion.Euler(0, 0, 0);
-            }
+            swapDirections();
+            switchDirections = false;
         }
-        else
-        {
-            if (movingRight)
-            {
-                velocity.x = speed;
-            }
-            else
-            {
-                velocity.x = -speed;
-            }
-        }
+        
+    }
 
+    void swapDirections()
+    {
+        Vector2 velocity = myRb2D.velocity;
+        velocity = -velocity;
         myRb2D.velocity = velocity;
+        spriteRenderer.flipX = true;
     }
 
 
