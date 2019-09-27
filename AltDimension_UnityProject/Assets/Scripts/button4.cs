@@ -5,9 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class button4 : MonoBehaviour
 {
-    public button1 button;
+    
     public static void nextIntro()
     {
+        
+    }
+
+    public static void next()
+    {
+
         SceneManager.LoadScene("IntroScene4");
     }
 
