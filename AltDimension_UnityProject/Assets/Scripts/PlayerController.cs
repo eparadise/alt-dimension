@@ -37,6 +37,10 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy")) {
             lives--;
             hpanel.UpdateHearts(lives);
+            if (lives == 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
     }
 }
