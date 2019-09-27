@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 8709557764580267878}
   - component: {fileID: 7759070607390837305}
   - component: {fileID: 5549288338993752771}
-  - component: {fileID: -7102443829555222629}
+  - component: {fileID: 1994769505910351168}
   m_Layer: 0
   m_Name: snake
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,8 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf1a8dceb1f04e35b69ab39e60fcc63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteWiggle: {fileID: 21300142, guid: 8db75531852f167448ec99cdf7152fb4, type: 3}
-  spriteFlat: {fileID: 21300144, guid: 8db75531852f167448ec99cdf7152fb4, type: 3}
   speed: 1
 --- !u!50 &5549288338993752771
 Rigidbody2D:
@@ -119,8 +117,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &-7102443829555222629
-CircleCollider2D:
+--- !u!60 &1994769505910351168
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -132,6 +130,27 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.9433963}
-  serializedVersion: 2
-  m_Radius: 1.0062894
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 2.0125787, y: 1.8867925}
+    newSize: {x: 2.0125787, y: 1.8867925}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.16730249, y: 0.80029655}
+      - {x: -0.15099347, y: 0.49013162}
+      - {x: -0.44166464, y: 0.49378157}
+      - {x: -0.45566958, y: 0.22835565}
+      - {x: -0.544661, y: 0}
+      - {x: 0.28107518, y: 0.037453175}
+      - {x: 0.3459494, y: 0.12716532}
+      - {x: 0.34829476, y: 0.32557917}
+      - {x: 0.48848104, y: 0.4616282}
+      - {x: 0.4416644, y: 0.84976315}
+      - {x: 0.38396606, y: 0.89586973}
+      - {x: 0.3305419, y: 0.9313829}
