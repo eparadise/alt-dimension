@@ -5,16 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class button4 : MonoBehaviour
 {
-    
+
     public static void nextIntro()
     {
-        
+     //   SceneManager.LoadScene("name of game scene");
     }
-
-    public static void next()
-    {
-
-        SceneManager.LoadScene("IntroScene4");
-    }
-
 }
