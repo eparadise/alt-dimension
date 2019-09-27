@@ -8,20 +8,21 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public Sprite spriteWiggle;
     public Sprite spriteFlat;
-    private Vector3 moveDirection = Vector3.forward;
-
+    
     private float timeLeft = 1.5f;
     public float speed;
     private bool wiggle = true;
     private float spriteTimer = 0.25f;
     private bool switchDirections;
-    private bool movingRight = true;
 
     // Start is called before the first frame update
     void Start()
     {
         myRb2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        Vector2 velocity = myRb2D.velocity;
+        velocity.x = speed;
+        myRb2D.velocity = velocity;
     }
 
     // Update is called once per frame
@@ -30,7 +31,8 @@ public class Enemy : MonoBehaviour
         timeLeft -= Time.deltaTime;
         spriteTimer -= Time.deltaTime;
         
-        if (spriteTimer < 0)
+        
+        if (spriteTimer <= 0)
         {
             spriteTimer = 0.25f;
             if(wiggle)
@@ -45,8 +47,6 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        Vector2 velocity = myRb2D.velocity;
-
         if (timeLeft < 0)
         {
             timeLeft = 1.5f;
@@ -55,30 +55,18 @@ public class Enemy : MonoBehaviour
 
         if (switchDirections)
         {
-            if(movingRight)
-            {
-                velocity.x = -speed;
-                transform.localRotation = Quaternion.Euler(0, 180, 0);
-            }
-            else
-            {
-                velocity.x = speed;
-                transform.localRotation = Quaternion.Euler(0, 0, 0);
-            }
+            swapDirections();
+            switchDirections = false;
         }
-        else
-        {
-            if (movingRight)
-            {
-                velocity.x = speed;
-            }
-            else
-            {
-                velocity.x = -speed;
-            }
-        }
+        
+    }
 
+    void swapDirections()
+    {
+        Vector2 velocity = myRb2D.velocity;
+        velocity.x = -velocity.x;
         myRb2D.velocity = velocity;
+        spriteRenderer.flipX = !spriteRenderer.flipX;
     }
 
 

@@ -10,11 +10,13 @@ public class PlayerController : MonoBehaviour
     private static int lives = 3;
     private int orbCount = 0;
     private UIHealthPanel hpanel;
+    private Door myDoor;
  
     // Start is called before the first frame update
     void Start()
     {
         hpanel = GameObject.FindObjectOfType<UIHealthPanel>();
+        myDoor = GameObject.FindObjectOfType<Door>();
     }
 
     // Update is called once per frame
@@ -31,7 +33,7 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
             if (orbCount == numOrbs)
             {
-                //open door
+                myDoor.openDoor();
             }
         }
         if (collision.gameObject.CompareTag("Enemy")) {
