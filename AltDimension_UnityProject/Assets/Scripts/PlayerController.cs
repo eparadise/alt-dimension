@@ -38,5 +38,14 @@ public class PlayerController : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
+        if (collision.gameObject.CompareTag("Door"))
+        {
+            StartCoroutine(DoorAnimation);
+        }
+    }
+
+    IEnumerator DoorAnimation()
+    {
+
     }
 }
