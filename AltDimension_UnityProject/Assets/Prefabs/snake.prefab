@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1275388536977034795}
   - component: {fileID: 1275388536977034794}
   - component: {fileID: -1515237198192182001}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: snake
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275388536977034796}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
