@@ -5,13 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    //public int numOrbs;
-    public float framesPerSecond;
-    public Sprite[] doorSprites;
 
     private static int lives = 3;
     private SpriteRenderer mySpriteRenderer;
-    //private int orbCount = 0;
     private UIHealthPanel hpanel;
     public LayerMask snakeLayerMask;
     private bool killEnemy;
@@ -62,24 +58,5 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        if (collision.gameObject.CompareTag("Door"))
-        {
-            if (collision.gameObject.GetComponent<Door>().isOpen)
-            {
-                StartCoroutine(DoorAnimation());
-            }
-        }
-    }
-
-    IEnumerator DoorAnimation()
-    {
-        int currentFrameIndex = 0;
-        while (currentFrameIndex < doorSprites.Length)
-        {
-            mySpriteRenderer.sprite = doorSprites[currentFrameIndex];
-            yield return new WaitForSeconds(1f / framesPerSecond);
-            currentFrameIndex++;
-        }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
