@@ -336,8 +336,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 919186876}
+  door: {fileID: 9136665600447105794, guid: 105fb16435622014d902a1c33217d033, type: 3}
   offsetX: 6
   offsetY: 3
+  doorOffsetX: -3
+  doorOffsetY: 1.5
 --- !u!1 &285822207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1632,6 +1635,45 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9136665600447105799, guid: 105fb16435622014d902a1c33217d033,
+        type: 3}
+      propertyPath: doorSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9136665600447105799, guid: 105fb16435622014d902a1c33217d033,
+        type: 3}
+      propertyPath: doorSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: -8519428142121358409, guid: f21405baf087f8040a7826260d75e6f7,
+        type: 3}
+    - target: {fileID: 9136665600447105799, guid: 105fb16435622014d902a1c33217d033,
+        type: 3}
+      propertyPath: doorSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: -5027180409211632660, guid: f21405baf087f8040a7826260d75e6f7,
+        type: 3}
+    - target: {fileID: 9136665600447105799, guid: 105fb16435622014d902a1c33217d033,
+        type: 3}
+      propertyPath: doorSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: -8131970197157755042, guid: f21405baf087f8040a7826260d75e6f7,
+        type: 3}
+    - target: {fileID: 9136665600447105799, guid: 105fb16435622014d902a1c33217d033,
+        type: 3}
+      propertyPath: doorSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: -6844631155905529027, guid: f21405baf087f8040a7826260d75e6f7,
+        type: 3}
+    - target: {fileID: 9136665600447105799, guid: 105fb16435622014d902a1c33217d033,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 268627782}
+    - target: {fileID: 9136665600447105799, guid: 105fb16435622014d902a1c33217d033,
+        type: 3}
+      propertyPath: framesPerSecond
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 105fb16435622014d902a1c33217d033, type: 3}

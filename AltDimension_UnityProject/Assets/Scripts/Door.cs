@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
     public Sprite openDoorSprite;
     public Sprite[] doorSprites;
     public int framesPerSecond = 1;
+    public Camera mainCamera;
 
     public bool isOpen = false;
     private SpriteRenderer mySR;
@@ -36,6 +37,7 @@ public class Door : MonoBehaviour
             if (isOpen)
             {
                 Destroy(collision.gameObject);
+                mainCamera.transform.position = new Vector3(mainCamera.transform.position.x, mainCamera.transform.position.y - 1, mainCamera.transform.position.z);
                 StartCoroutine(DoorAnimation());
             }
         }
