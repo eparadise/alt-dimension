@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
                 hpanel.UpdateHearts(lives);
                 if (lives == 0)
                 {
+                    lives = 3;
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 }
             }
@@ -81,6 +82,6 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(1f / framesPerSecond);
             currentFrameIndex++;
         }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);   //need to check if it is last scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
