@@ -59,13 +59,13 @@ public class FollowCamera : MonoBehaviour
         {
             if (transform.position.x < 0)
             {
-                transform.position = new Vector3(transform.position.x + 5, transform.position.y, transform.position.z);
+                transform.position = transform.position + 0.5f * Random.onUnitSphere;
             }
             else
             {
-                transform.position = new Vector3(transform.position.x - 5, transform.position.y, transform.position.z);
+                transform.position = transform.position - 0.5f * Random.onUnitSphere;
             }
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
         isShaking = false;
 
