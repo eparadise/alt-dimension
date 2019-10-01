@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer mySpriteRenderer;
     //private int orbCount = 0;
     private UIHealthPanel hpanel;
+    public LayerMask playerLayerMask;
+    public bool killEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        RaycastHit2D jumpingOn = Physics2D.Raycast(transform.position, Vector2.down, 2, playerLayerMask, -Mathf.Infinity, Mathf.Infinity);
+        if(jumpingOn.collider != null)
+        { 
+            GameObject myObj = jumpingOn.collider.gameObject;
+            if(myObj.CompareTag("Enemy"))
+            {
+                killEnemy = true;
+            }
+        }
+        else
+        {
+            killEnemy = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,11 +49,18 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Enemy")) {
-            lives--;
-            hpanel.UpdateHearts(lives);
-            if (lives == 0)
+            if (killEnemy)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                Destroy(collision.gameObject);
+            }
+            else
+            {
+                lives--;
+                hpanel.UpdateHearts(lives);
+                if (lives == 0)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
             }
         }
         if (collision.gameObject.CompareTag("Door"))
