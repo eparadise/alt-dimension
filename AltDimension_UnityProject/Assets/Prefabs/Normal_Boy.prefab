@@ -159,9 +159,9 @@ MonoBehaviour:
   - {fileID: -5027180409211632660, guid: f21405baf087f8040a7826260d75e6f7, type: 3}
   - {fileID: -8131970197157755042, guid: f21405baf087f8040a7826260d75e6f7, type: 3}
   - {fileID: -6844631155905529027, guid: f21405baf087f8040a7826260d75e6f7, type: 3}
-  enemyLayerMask:
+  snakeLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1024
 --- !u!114 &919186877
 MonoBehaviour:
   m_ObjectHideFlags: 0

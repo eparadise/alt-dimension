@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer mySpriteRenderer;
     //private int orbCount = 0;
     private UIHealthPanel hpanel;
-    public LayerMask enemyLayerMask;
+    public LayerMask snakeLayerMask;
     private bool killEnemy;
 
     // Start is called before the first frame update
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D jumpingOn = Physics2D.CircleCast(transform.position, 0.7f / 2.0f, Vector2.down, 1, enemyLayerMask);
+        RaycastHit2D jumpingOn = Physics2D.CircleCast(transform.position, 0.7f / 2.0f, Vector2.down, 1, snakeLayerMask);
         killEnemy = false;
         if (jumpingOn.collider != null)
         {
