@@ -7,11 +7,14 @@ public class FollowCamera : MonoBehaviour
 
     public GameObject player;
     public GameObject door;
-
     public float offsetX;
     public float offsetY;
     public float doorOffsetX;
     public float doorOffsetY;
+    public float shakeTimer = 2;
+
+    private bool isShaking = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,20 +25,49 @@ public class FollowCamera : MonoBehaviour
     void LateUpdate()
     {
         Vector3 pos = transform.position;
-        if (player != null)
+        if (!isShaking)
         {
-            pos.x = player.transform.position.x + offsetX;
-            pos.y = player.transform.position.y + offsetY;
+            if (player != null)
+            {
+                pos.x = player.transform.position.x + offsetX;
+                pos.y = player.transform.position.y + offsetY;
 
+            }
+            else
+            {
+                pos.x = door.transform.position.x + doorOffsetX;
+                pos.y = door.transform.position.y + doorOffsetY;
+            }
+
+
+            transform.position = pos;
         }
-        else
+        
+
+    }
+
+    public void CameraShake()
+    {
+        isShaking = true;
+        StartCoroutine(ShakeRoutine());
+    }
+
+    IEnumerator ShakeRoutine()
+    {
+        float startTime = Time.time;
+        while (startTime + shakeTimer > Time.time)
         {
-            pos.x = door.transform.position.x + doorOffsetX;
-            pos.y = door.transform.position.y + doorOffsetY;
+            if (transform.position.x < 0)
+            {
+                transform.position = new Vector3(transform.position.x + 5, transform.position.y, transform.position.z);
+            }
+            else
+            {
+                transform.position = new Vector3(transform.position.x - 5, transform.position.y, transform.position.z);
+            }
+            yield return new WaitForSeconds(0.1f);
         }
-
-
-        transform.position = pos;
+        isShaking = false;
 
     }
 

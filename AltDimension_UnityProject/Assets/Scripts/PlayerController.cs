@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer mySpriteRenderer;
     private UIHealthPanel hpanel;
     public LayerMask snakeLayerMask;
+    public Camera mainCamera;
     private bool killEnemy;
 
     // Start is called before the first frame update
@@ -45,12 +46,14 @@ public class PlayerController : MonoBehaviour
             if (killEnemy)
             {
                 //Destroy(collision.gameObject);
+                mainCamera.GetComponent<FollowCamera>().CameraShake();
                 collision.gameObject.GetComponent<Enemy>().Hurt();
             }
             else
             {
                 if (!gameObject.GetComponent<Enemy>().isHurt)
                 {
+                    mainCamera.GetComponent<FollowCamera>().CameraShake();
                     lives--;
                     hpanel.UpdateHearts(lives);
                     if (lives == 0)
