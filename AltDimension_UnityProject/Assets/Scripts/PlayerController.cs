@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     //public int numOrbs;
+    public float framesPerSecond;
+    public Sprite[] doorSprites;
 
     private static int lives = 3;
+    private SpriteRenderer mySpriteRenderer;
     //private int orbCount = 0;
     private UIHealthPanel hpanel;
 
@@ -15,6 +18,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         hpanel = GameObject.FindObjectOfType<UIHealthPanel>();
+        mySpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -40,12 +44,23 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Door"))
         {
-            StartCoroutine(DoorAnimation);
+            if (collision.gameObject.GetComponent<Door>().isOpen)
+            {
+                StartCoroutine(DoorAnimation());
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
     }
 
     IEnumerator DoorAnimation()
     {
-
+        int currentFrameIndex = 0;
+        while (currentFrameIndex < doorSprites.Length)
+        {
+            mySpriteRenderer.sprite = doorSprites[currentFrameIndex];
+            yield return new WaitForSeconds(1f / framesPerSecond);
+            currentFrameIndex++;
+        }
+        Destroy(gameObject);
     }
 }

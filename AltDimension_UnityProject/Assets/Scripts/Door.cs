@@ -25,15 +25,15 @@ public class Door : MonoBehaviour
         isOpen = true;
         mySR.sprite = openDoorSprite;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+        /*private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (isOpen)
+            if (collision.gameObject.CompareTag("Player"))
             {
-                SceneManager.LoadScene("BeaScene");
+                if (isOpen)
+                {
+                    SceneManager.LoadScene("BeaScene");
+                }
             }
-        }
-    }
+        } */
     
 }
