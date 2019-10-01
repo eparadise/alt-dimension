@@ -49,13 +49,17 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                lives--;
-                hpanel.UpdateHearts(lives);
-                if (lives == 0)
+                if (!gameObject.GetComponent<Enemy>().isHurt)
                 {
-                    lives = 3;
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    lives--;
+                    hpanel.UpdateHearts(lives);
+                    if (lives == 0)
+                    {
+                        lives = 3;
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    }
                 }
+             
             }
         }
     }

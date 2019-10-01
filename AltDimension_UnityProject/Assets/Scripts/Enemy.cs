@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private Rigidbody2D myRb2D;
     private SpriteRenderer spriteRenderer;
     public Sprite spriteWiggle;
     public Sprite spriteFlat;
     public float hurtTimer = 1;
-    
+    public bool isHurt = false;
+
+    private Rigidbody2D myRb2D;
     private float timeLeft = 1.5f;
     public float speed;
     private bool wiggle = true;
@@ -72,7 +73,12 @@ public class Enemy : MonoBehaviour
 
     public void Hurt()
     {
-        StartCoroutine(HurtRoutine());
+        if (!isHurt)
+        {
+            isHurt = true;
+            myRb2D.velocity = new Vector3(0, 0, 0);
+            StartCoroutine(HurtRoutine());
+        }   
     }
 
     IEnumerator HurtRoutine()
