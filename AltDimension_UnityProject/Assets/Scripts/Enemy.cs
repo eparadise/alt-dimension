@@ -92,6 +92,7 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         spriteRenderer.color = Color.white;
+        Destroy(gameObject);
     }
 
 

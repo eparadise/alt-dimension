@@ -48,7 +48,8 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy")) {
             if (killEnemy)
             {
-                Destroy(collision.gameObject);
+                //Destroy(collision.gameObject);
+                collision.gameObject.GetComponent<Enemy>().Hurt();
             }
             else
             {
