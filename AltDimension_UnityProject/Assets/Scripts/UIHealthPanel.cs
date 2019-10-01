@@ -17,7 +17,7 @@ public class UIHealthPanel : MonoBehaviour
 			if (i < lives) {
 				hearts [i].enabled = true;
 			} else {
-				hearts [i].enabled = false;
+                hearts[i].color = Color.black;
 			}
 		}
 	}
