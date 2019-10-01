@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     //private int orbCount = 0;
     private UIHealthPanel hpanel;
     public LayerMask playerLayerMask;
-    public bool killEnemy;
+    private bool killEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -35,10 +35,6 @@ public class PlayerController : MonoBehaviour
                 killEnemy = true;
             }
         }
-        else
-        {
-            killEnemy = false;
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -52,6 +48,7 @@ public class PlayerController : MonoBehaviour
             if (killEnemy)
             {
                 Destroy(collision.gameObject);
+                killEnemy = false;
             }
             else
             {
