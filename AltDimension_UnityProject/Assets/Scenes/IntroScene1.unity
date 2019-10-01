@@ -612,7 +612,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2057182510}
-        m_MethodName: nextIntro
+        m_MethodName: NextIntro
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -671,6 +671,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2057182505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e8b19a8879ae4f26baf0dcade5d2f7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 682a98deace0f41f4ac591cb8636cfb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class button2 : MonoBehaviour
+public class Button2 : MonoBehaviour
 {
-   
-    public static void nextIntro()
+
+    public void NextIntro()
     {
         SceneManager.LoadScene("IntroScene3");
     }
-
 
 }

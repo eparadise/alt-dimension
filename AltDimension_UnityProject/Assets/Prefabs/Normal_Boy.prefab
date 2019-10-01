@@ -122,7 +122,7 @@ MonoBehaviour:
   input: {x: 0, y: 0}
   canMove: 1
   speed: 5
-  jumpVelocity: 5
+  jumpVelocity: 6
   gravity: 0
   jumpingToleranceTimer: 0.1
   groundingToleranceTimer: 0.1
@@ -153,8 +153,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afdafb6afe0fce2478219bfff5474939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  framesPerSecond: 0
-  doorSprites: []
+  framesPerSecond: 3
+  doorSprites:
+  - {fileID: -8519428142121358409, guid: f21405baf087f8040a7826260d75e6f7, type: 3}
+  - {fileID: -5027180409211632660, guid: f21405baf087f8040a7826260d75e6f7, type: 3}
+  - {fileID: -8131970197157755042, guid: f21405baf087f8040a7826260d75e6f7, type: 3}
+  - {fileID: -6844631155905529027, guid: f21405baf087f8040a7826260d75e6f7, type: 3}
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 256
