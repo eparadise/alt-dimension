@@ -577,7 +577,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1964074622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a66fec90ee19483b9353ff8a29b2d9d, type: 3}
+  m_Script: {fileID: 11500000, guid: 10735033bc2014e12b9bb66822ef12b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1964074625
@@ -624,7 +624,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1964074624}
-        m_MethodName: nextIntro
+        m_MethodName: NextIntro
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

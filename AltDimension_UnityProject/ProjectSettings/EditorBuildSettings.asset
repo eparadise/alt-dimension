@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IntroScene4.unity
     guid: f2e739598b3274e3a8128f7cecdb0ba7
+  - enabled: 1
+    path: Assets/Scenes/ElizaScene.unity
+    guid: 012a51b825c90b14e8326e8c2fe7e538
   m_configObjects: {}
