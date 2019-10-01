@@ -11,7 +11,9 @@ public class PlayerController : MonoBehaviour
     private UIHealthPanel hpanel;
     public LayerMask snakeLayerMask;
     public Camera mainCamera;
+    public float hurtTimer = 1;
     private bool killEnemy;
+    private bool isHurt = false;
 
     // Start is called before the first frame update
     void Start()
@@ -46,24 +48,51 @@ public class PlayerController : MonoBehaviour
             if (killEnemy)
             {
                 //Destroy(collision.gameObject);
-                mainCamera.GetComponent<FollowCamera>().CameraShake();
+                //mainCamera.GetComponent<FollowCamera>().CameraShake();
                 collision.gameObject.GetComponent<Enemy>().Hurt();
+                //StartCoroutine(HurtRoutine());
             }
             else
             {
-                if (!gameObject.GetComponent<Enemy>().isHurt)
+                if (!gameObject.GetComponent<Enemy>().isHurt && !isHurt)
                 {
-                    mainCamera.GetComponent<FollowCamera>().CameraShake();
+                    
                     lives--;
-                    hpanel.UpdateHearts(lives);
                     if (lives == 0)
                     {
+                        hpanel.UpdateHearts(lives);
+                        //die coroutine here
                         lives = 3;
                         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    }
+                    else
+                    {
+                        mainCamera.GetComponent<FollowCamera>().CameraShake();
+                        StartCoroutine(HurtRoutine());
                     }
                 }
              
             }
         }
+    }
+
+    IEnumerator HurtRoutine()
+    {
+        float startTime = Time.time;
+        while (startTime + hurtTimer > Time.time)
+        {
+            if (mySpriteRenderer.color != Color.black)
+            {
+                mySpriteRenderer.color = Color.black;
+            }
+            else
+            {
+                mySpriteRenderer.color = Color.white;
+            }
+
+            yield return new WaitForSeconds(0.1f);
+        }
+        mySpriteRenderer.color = Color.white;
+        hpanel.UpdateHearts(lives);
     }
 }
