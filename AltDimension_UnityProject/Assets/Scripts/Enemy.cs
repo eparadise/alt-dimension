@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public Sprite spriteWiggle;
     public Sprite spriteFlat;
+    public float hurtTimer = 1;
     
     private float timeLeft = 1.5f;
     public float speed;
@@ -67,6 +68,30 @@ public class Enemy : MonoBehaviour
         velocity.x = -velocity.x;
         myRb2D.velocity = velocity;
         spriteRenderer.flipX = !spriteRenderer.flipX;
+    }
+
+    public void Hurt()
+    {
+        StartCoroutine(HurtRoutine());
+    }
+
+    IEnumerator HurtRoutine()
+    {
+        float startTime = Time.time;
+        while (startTime + hurtTimer > Time.time)
+        {
+            if (spriteRenderer.color != Color.red)
+            {
+                spriteRenderer.color = Color.red;
+            }
+            else
+            {
+                spriteRenderer.color = Color.white;
+            }
+
+            yield return new WaitForSeconds(0.1f);
+        }
+        spriteRenderer.color = Color.white;
     }
 
 
