@@ -446,12 +446,12 @@ PrefabInstance:
     - target: {fileID: 2820382736923553249, guid: 6f2e91c4a59fa4e7c80bff7264ad1b4a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.88
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 2820382736923553249, guid: 6f2e91c4a59fa4e7c80bff7264ad1b4a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.06
+      value: 5.64
       objectReference: {fileID: 0}
     - target: {fileID: 2820382736923553249, guid: 6f2e91c4a59fa4e7c80bff7264ad1b4a,
         type: 3}
@@ -725,6 +725,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1507884232, guid: dcda4a41db42ba740b583fd901fc6700, type: 3}
+      propertyPath: jumpVelocity
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1424382074, guid: dcda4a41db42ba740b583fd901fc6700, type: 3}
       propertyPath: doorSprites.Array.size
       value: 4
@@ -751,7 +755,7 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 1424382074, guid: dcda4a41db42ba740b583fd901fc6700, type: 3}
       propertyPath: framesPerSecond
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcda4a41db42ba740b583fd901fc6700, type: 3}

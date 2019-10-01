@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
             if (collision.gameObject.GetComponent<Door>().isOpen)
             {
                 StartCoroutine(DoorAnimation());
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }
@@ -61,6 +60,6 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(1f / framesPerSecond);
             currentFrameIndex++;
         }
-        Destroy(gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);   //need to check if it is last scene
     }
 }
