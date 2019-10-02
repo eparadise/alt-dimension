@@ -43,12 +43,17 @@ public class PlayerController : MonoBehaviour
         if(transform.position.y < -25)
         {
             lives--;
+            hpanel.UpdateHearts(lives);
             if (lives == 0)
             {
-                lives = 3;
-            }
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                Die();
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            
         }
     }
 
@@ -75,12 +80,7 @@ public class PlayerController : MonoBehaviour
                     if (lives == 0)
                     {
                         hpanel.UpdateHearts(lives);
-                        //die coroutine here
-                        lives = 3;
-                        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                        GameManager myGameManager = FindObjectOfType<GameManager>();
-                        myGameManager.SetPrevScene(SceneManager.GetActiveScene().name);
-                        SceneManager.LoadScene("DeathScene");
+                        Die();
                     }
                     else
                     {
@@ -112,5 +112,13 @@ public class PlayerController : MonoBehaviour
         mySpriteRenderer.color = Color.white;
         isHurt = false;
         hpanel.UpdateHearts(lives);
+    }
+
+    private void Die()
+    {
+        lives = 3;
+        GameManager myGameManager = FindObjectOfType<GameManager>();
+        myGameManager.SetPrevScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("ElizaDeathScene");
     }
 }

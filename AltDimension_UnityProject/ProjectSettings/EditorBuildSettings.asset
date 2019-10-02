@@ -32,7 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndingScene.unity
     guid: 98db222d3c45d4ecd8c5884d191deed4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DeathScene.unity
     guid: fde890152b8074fbaab04105b5fcc8ce
+  - enabled: 1
+    path: Assets/Scenes/ElizaDeathScene.unity
+    guid: 2bf2638aca3f8ac4db6ac3536ed284ff
   m_configObjects: {}
