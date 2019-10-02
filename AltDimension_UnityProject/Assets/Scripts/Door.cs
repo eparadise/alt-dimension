@@ -16,6 +16,7 @@ public class Door : MonoBehaviour
     void Start()
     {
         mySR = gameObject.GetComponent<SpriteRenderer>();
+        mainCamera = GameObject.FindObjectOfType<Camera>();
     }
 
     // Update is called once per frame
@@ -55,6 +56,8 @@ public class Door : MonoBehaviour
             yield return new WaitForSeconds(1f / framesPerSecond);
             currentFrameIndex++;
         }
+        GameManager myGameManager = FindObjectOfType<GameManager>();
+        myGameManager.SetPrevScene(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

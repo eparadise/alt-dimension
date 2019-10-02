@@ -11,9 +11,7 @@ public class FollowCamera : MonoBehaviour
     public float offsetY;
     public float doorOffsetX;
     public float doorOffsetY;
-    public float shakeTimer = 2;
-
-    private bool isShaking = false;
+    private float shakeTimer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -25,51 +23,26 @@ public class FollowCamera : MonoBehaviour
     void LateUpdate()
     {
         Vector3 pos = transform.position;
-        if (!isShaking)
-        {
-            if (player != null)
-            {
-                pos.x = player.transform.position.x + offsetX;
-                pos.y = player.transform.position.y + offsetY;
-
-            }
-            else
-            {
-                pos.x = door.transform.position.x + doorOffsetX;
-                pos.y = door.transform.position.y + doorOffsetY;
-            }
-
-
-            transform.position = pos;
+        if (player != null) { 
+            pos.x = player.transform.position.x + offsetX;
+            pos.y = player.transform.position.y + offsetY;
         }
-        
-
+        else
+        {
+            pos.x = door.transform.position.x + doorOffsetX;
+            pos.y = door.transform.position.y + doorOffsetY;
+        }
+        if (shakeTimer > 0)
+        {
+            pos += Random.onUnitSphere * 0.2f;
+            shakeTimer -= Time.deltaTime;
+        }
+        transform.position = pos;
     }
 
     public void CameraShake()
     {
-        isShaking = true;
-        StartCoroutine(ShakeRoutine());
+        shakeTimer = 1.0f;
     }
-
-    IEnumerator ShakeRoutine()
-    {
-        float startTime = Time.time;
-        while (startTime + shakeTimer > Time.time)
-        {
-            if (transform.position.x < 0)
-            {
-                transform.position = transform.position + 0.5f * Random.onUnitSphere;
-            }
-            else
-            {
-                transform.position = transform.position - 0.5f * Random.onUnitSphere;
-            }
-            yield return new WaitForSeconds(0.05f);
-        }
-        isShaking = false;
-
-    }
-
 
 }
