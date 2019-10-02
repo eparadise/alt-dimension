@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public Sprite spriteWiggle;
     public Sprite spriteFlat;
     public float hurtTimer = 1;
-    public bool isHurt = false;
+    public bool isHurt;
 
     private Rigidbody2D myRb2D;
     private float timeLeft = 1.5f;
@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isHurt = false;
         myRb2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         Vector2 velocity = myRb2D.velocity;
@@ -98,6 +99,7 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         spriteRenderer.color = Color.white;
+        isHurt = false;
         Destroy(gameObject);
     }
 

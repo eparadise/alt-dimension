@@ -13,13 +13,14 @@ public class PlayerController : MonoBehaviour
     public Camera mainCamera;
     public float hurtTimer = 1;
     private bool killEnemy;
-    private bool isHurt = false;
+    private bool isHurt;
 
     // Start is called before the first frame update
     void Start()
     {
         hpanel = GameObject.FindObjectOfType<UIHealthPanel>();
         mySpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        isHurt = false;
     }
 
     // Update is called once per frame
@@ -54,10 +55,11 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                if (!gameObject.GetComponent<Enemy>().isHurt && !isHurt)
+                if (!collision.gameObject.GetComponent<Enemy>().isHurt && !isHurt)
                 {
                     
                     lives--;
+                    hpanel.UpdateHearts(lives);
                     if (lives == 0)
                     {
                         hpanel.UpdateHearts(lives);
