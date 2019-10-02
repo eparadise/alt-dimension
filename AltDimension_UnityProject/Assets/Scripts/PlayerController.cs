@@ -95,6 +95,7 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         mySpriteRenderer.color = Color.white;
+        isHurt = false;
         hpanel.UpdateHearts(lives);
     }
 }
