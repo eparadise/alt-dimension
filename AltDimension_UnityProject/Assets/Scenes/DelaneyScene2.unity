@@ -2420,8 +2420,19 @@ PrefabInstance:
       propertyPath: isOpen
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9136665600447105799, guid: 105fb16435622014d902a1c33217d033,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1528862550}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 105fb16435622014d902a1c33217d033, type: 3}
+--- !u!1 &1404311823 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9136665600447105794, guid: 105fb16435622014d902a1c33217d033,
+    type: 3}
+  m_PrefabInstance: {fileID: 1404311822}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1407310090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2727,7 +2738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1372187458}
-  door: {fileID: 0}
+  door: {fileID: 1404311823}
   offsetX: 6
   offsetY: 2
   doorOffsetX: 0
