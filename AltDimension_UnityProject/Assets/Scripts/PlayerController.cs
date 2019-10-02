@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         if (jumpingOn.collider != null)
         {
             GameObject myObj = jumpingOn.collider.gameObject;
-            if (myObj.CompareTag("Enemy"))
+            if (myObj.CompareTag("Enemy") && myRb2D.velocity.y < 0)
             {
                 killEnemy = true;
             }
@@ -47,7 +47,8 @@ public class PlayerController : MonoBehaviour
             OrbManager.instance.OrbCollected();
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.CompareTag("Enemy")) {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
             if (killEnemy)
             {
                 Destroy(collision.gameObject);
@@ -59,7 +60,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (!collision.gameObject.GetComponent<Enemy>().isHurt && !isHurt)
                 {
-                    
+
                     lives--;
                     hpanel.UpdateHearts(lives);
                     if (lives == 0)
@@ -75,7 +76,7 @@ public class PlayerController : MonoBehaviour
                         //StartCoroutine(HurtRoutine());
                     }
                 }
-             
+
             }
         }
     }
