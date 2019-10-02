@@ -77,7 +77,10 @@ public class PlayerController : MonoBehaviour
                         hpanel.UpdateHearts(lives);
                         //die coroutine here
                         lives = 3;
-                        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                        GameManager myGameManager = FindObjectOfType<GameManager>();
+                        myGameManager.SetPrevScene(SceneManager.GetActiveScene().name);
+                        SceneManager.LoadScene("DeathScene");
                     }
                     else
                     {

@@ -10,4 +10,9 @@ public class GameManager : MonoBehaviour
     {
         prevScene = name;
     }
+
+    public string GetPrevScene()
+    {
+        return prevScene;
+    }
 }
