@@ -729,38 +729,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1507884232, guid: dcda4a41db42ba740b583fd901fc6700, type: 3}
-      propertyPath: jumpVelocity
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1424382074, guid: dcda4a41db42ba740b583fd901fc6700, type: 3}
-      propertyPath: doorSprites.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1424382074, guid: dcda4a41db42ba740b583fd901fc6700, type: 3}
-      propertyPath: doorSprites.Array.data[0]
-      value: 
-      objectReference: {fileID: -8519428142121358409, guid: f21405baf087f8040a7826260d75e6f7,
-        type: 3}
-    - target: {fileID: 1424382074, guid: dcda4a41db42ba740b583fd901fc6700, type: 3}
-      propertyPath: doorSprites.Array.data[1]
-      value: 
-      objectReference: {fileID: -5027180409211632660, guid: f21405baf087f8040a7826260d75e6f7,
-        type: 3}
-    - target: {fileID: 1424382074, guid: dcda4a41db42ba740b583fd901fc6700, type: 3}
-      propertyPath: doorSprites.Array.data[2]
-      value: 
-      objectReference: {fileID: -8131970197157755042, guid: f21405baf087f8040a7826260d75e6f7,
-        type: 3}
-    - target: {fileID: 1424382074, guid: dcda4a41db42ba740b583fd901fc6700, type: 3}
-      propertyPath: doorSprites.Array.data[3]
-      value: 
-      objectReference: {fileID: -6844631155905529027, guid: f21405baf087f8040a7826260d75e6f7,
-        type: 3}
-    - target: {fileID: 1424382074, guid: dcda4a41db42ba740b583fd901fc6700, type: 3}
-      propertyPath: framesPerSecond
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1424382074, guid: dcda4a41db42ba740b583fd901fc6700, type: 3}
       propertyPath: mainCamera
       value: 
@@ -1643,42 +1611,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9136665600447105799, guid: 105fb16435622014d902a1c33217d033,
         type: 3}
-      propertyPath: doorSprites.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9136665600447105799, guid: 105fb16435622014d902a1c33217d033,
-        type: 3}
-      propertyPath: doorSprites.Array.data[0]
-      value: 
-      objectReference: {fileID: -8519428142121358409, guid: f21405baf087f8040a7826260d75e6f7,
-        type: 3}
-    - target: {fileID: 9136665600447105799, guid: 105fb16435622014d902a1c33217d033,
-        type: 3}
-      propertyPath: doorSprites.Array.data[1]
-      value: 
-      objectReference: {fileID: -5027180409211632660, guid: f21405baf087f8040a7826260d75e6f7,
-        type: 3}
-    - target: {fileID: 9136665600447105799, guid: 105fb16435622014d902a1c33217d033,
-        type: 3}
-      propertyPath: doorSprites.Array.data[2]
-      value: 
-      objectReference: {fileID: -8131970197157755042, guid: f21405baf087f8040a7826260d75e6f7,
-        type: 3}
-    - target: {fileID: 9136665600447105799, guid: 105fb16435622014d902a1c33217d033,
-        type: 3}
-      propertyPath: doorSprites.Array.data[3]
-      value: 
-      objectReference: {fileID: -6844631155905529027, guid: f21405baf087f8040a7826260d75e6f7,
-        type: 3}
-    - target: {fileID: 9136665600447105799, guid: 105fb16435622014d902a1c33217d033,
-        type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 268627782}
-    - target: {fileID: 9136665600447105799, guid: 105fb16435622014d902a1c33217d033,
-        type: 3}
-      propertyPath: framesPerSecond
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 105fb16435622014d902a1c33217d033, type: 3}

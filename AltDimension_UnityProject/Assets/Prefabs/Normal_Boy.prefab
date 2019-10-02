@@ -153,15 +153,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afdafb6afe0fce2478219bfff5474939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  framesPerSecond: 3
-  doorSprites:
-  - {fileID: -8519428142121358409, guid: f21405baf087f8040a7826260d75e6f7, type: 3}
-  - {fileID: -5027180409211632660, guid: f21405baf087f8040a7826260d75e6f7, type: 3}
-  - {fileID: -8131970197157755042, guid: f21405baf087f8040a7826260d75e6f7, type: 3}
-  - {fileID: -6844631155905529027, guid: f21405baf087f8040a7826260d75e6f7, type: 3}
   snakeLayerMask:
     serializedVersion: 2
     m_Bits: 1024
+  mainCamera: {fileID: 0}
+  hurtTimer: 1
 --- !u!114 &919186877
 MonoBehaviour:
   m_ObjectHideFlags: 0
