@@ -97,6 +97,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openDoorSprite: {fileID: -2211724182214688752, guid: a85a546571163b64490662f0f5a7acb8,
     type: 3}
+  doorSprites:
+  - {fileID: -8519428142121358409, guid: f21405baf087f8040a7826260d75e6f7, type: 3}
+  - {fileID: -5027180409211632660, guid: f21405baf087f8040a7826260d75e6f7, type: 3}
+  - {fileID: -8131970197157755042, guid: f21405baf087f8040a7826260d75e6f7, type: 3}
+  - {fileID: -6844631155905529027, guid: f21405baf087f8040a7826260d75e6f7, type: 3}
+  framesPerSecond: 5
+  mainCamera: {fileID: 0}
   isOpen: 0
 --- !u!60 &9136665600447105798
 PolygonCollider2D:
