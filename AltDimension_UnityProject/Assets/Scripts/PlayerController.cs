@@ -14,12 +14,14 @@ public class PlayerController : MonoBehaviour
     public float hurtTimer = 1;
     private bool killEnemy;
     private bool isHurt;
+    private Rigidbody2D myRb2D;
 
     // Start is called before the first frame update
     void Start()
     {
         hpanel = GameObject.FindObjectOfType<UIHealthPanel>();
         mySpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        myRb2D = gameObject.GetComponent<Rigidbody2D>();
         isHurt = false;
     }
 
