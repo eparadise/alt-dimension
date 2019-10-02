@@ -97,7 +97,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteWiggle: {fileID: 21300144, guid: 8db75531852f167448ec99cdf7152fb4, type: 3}
   spriteFlat: {fileID: 21300142, guid: 8db75531852f167448ec99cdf7152fb4, type: 3}
+  hurtTimer: 1
+  isHurt: 0
   speed: 1
+  snakeNoise: {fileID: 8300000, guid: 2738198f83c354c56a8d5c3b8166517f, type: 3}
 --- !u!50 &1275388536977034794
 Rigidbody2D:
   serializedVersion: 4

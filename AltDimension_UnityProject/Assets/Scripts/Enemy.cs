@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour
     private bool wiggle = true;
     private float spriteTimer = 0.25f;
     private bool switchDirections;
+    private AudioSource myAudioSource;
+    public AudioClip snakeNoise;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,7 @@ public class Enemy : MonoBehaviour
         Vector2 velocity = myRb2D.velocity;
         velocity.x = speed;
         myRb2D.velocity = velocity;
+        myAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -74,12 +77,14 @@ public class Enemy : MonoBehaviour
 
     public void Hurt()
     {
+        AudioClip clip = snakeNoise;
+        myAudioSource.PlayOneShot(clip);
         if (!isHurt)
         {
             isHurt = true;
             myRb2D.velocity = new Vector3(0, 0, 0);
             StartCoroutine(HurtRoutine());
-        }   
+        }
     }
 
     IEnumerator HurtRoutine()

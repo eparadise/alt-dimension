@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroScene4.unity
     guid: f2e739598b3274e3a8128f7cecdb0ba7
   - enabled: 1
+    path: Assets/Scenes/TutorialScene.unity
+    guid: 0744e45f0cccf47b584252d21e6d321d
+  - enabled: 1
     path: Assets/Scenes/ElizaScene.unity
     guid: 012a51b825c90b14e8326e8c2fe7e538
   - enabled: 1
@@ -26,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DelaneyScene2.unity
     guid: b09bbbdc18f5a4a6bafd673e8b1ab494
+  - enabled: 1
+    path: Assets/Scenes/EndingScene.unity
+    guid: 98db222d3c45d4ecd8c5884d191deed4
+  - enabled: 1
+    path: Assets/Scenes/DeathScene.unity
+    guid: fde890152b8074fbaab04105b5fcc8ce
   m_configObjects: {}
