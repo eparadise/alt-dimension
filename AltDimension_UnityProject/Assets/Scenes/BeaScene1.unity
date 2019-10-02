@@ -426,7 +426,6 @@ MonoBehaviour:
   offsetY: 3
   doorOffsetX: 0
   doorOffsetY: 0
-  shakeTimer: 2
 --- !u!82 &268627785
 AudioSource:
   m_ObjectHideFlags: 0
