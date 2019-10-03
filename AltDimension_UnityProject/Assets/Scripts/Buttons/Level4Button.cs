@@ -7,6 +7,6 @@ public class Level4Button : MonoBehaviour
 {
     public void Menu()
     {
-        SceneManager.LoadScene("DelaneyScene2");
+        SceneManager.LoadScene("BeaScene2");
     }
 }
