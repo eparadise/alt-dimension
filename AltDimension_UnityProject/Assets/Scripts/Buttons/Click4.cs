@@ -8,6 +8,6 @@ public class Click4 : MonoBehaviour
 
     public void NextIntro()
     {
-        SceneManager.LoadScene("TutorialScene");
+        SceneManager.LoadScene("MenuScene");
     }
 }
