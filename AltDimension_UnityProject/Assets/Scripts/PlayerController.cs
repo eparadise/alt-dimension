@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private bool killEnemy;
     private bool isHurt;
     private Rigidbody2D myRb2D;
+    private AudioSource myAudioSource;
+    public AudioClip hurtNoise;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,7 @@ public class PlayerController : MonoBehaviour
         mySpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         myRb2D = gameObject.GetComponent<Rigidbody2D>();
         isHurt = false;
+        myAudioSource = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -76,6 +79,8 @@ public class PlayerController : MonoBehaviour
                 {
 
                     lives--;
+                    AudioClip clip = hurtNoise;
+                    myAudioSource.PlayOneShot(clip);
                     //hpanel.UpdateHearts(lives);
                     if (lives == 0)
                     {
