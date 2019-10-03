@@ -10,7 +10,7 @@ public class Level5Button : MonoBehaviour
     {
         if (myGameManager.GetLastUnlocked() >= 8)
         {
-            SceneManager.LoadScene("DelaneyScene2");
+            SceneManager.LoadScene("ElizaScene2");
         }
     }
 }
