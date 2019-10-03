@@ -2,15 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Level6Button : MonoBehaviour
 {
     public GameManager myGameManager;
+    public void Awake()
+    {
+        GetComponent<Button>().interactable = false;
+    }
     public void Menu()
+    {
+        SceneManager.LoadScene("DelaneyScene2");
+    }
+
+    public void Update()
     {
         if (myGameManager.GetLastUnlocked() >= 9)
         {
-            SceneManager.LoadScene("DelaneyScene2");
+            GetComponent<Button>().interactable = true;
         }
     }
 }

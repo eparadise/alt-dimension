@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Level2Button : MonoBehaviour
 {
@@ -9,22 +10,18 @@ public class Level2Button : MonoBehaviour
 
     public void Awake()
     {
-        enabled = false;
+        GetComponent<Button>().interactable = false;
     }
     public void Menu()
     {
-        if (myGameManager.GetLastUnlocked() >= 5)
-        {
-            SceneManager.LoadScene("ElizaScene");
-        }
-       
+       SceneManager.LoadScene("ElizaScene");
     }
 
     public void Update()
     {
         if (myGameManager.GetLastUnlocked() >= 5)
         {
-            enabled = true;
+            GetComponent<Button>().interactable = true;
         }
     }
 }
