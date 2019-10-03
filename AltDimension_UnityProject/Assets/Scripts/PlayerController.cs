@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D myRb2D;
     private AudioSource myAudioSource;
     public AudioClip hurtNoise;
+	
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +67,7 @@ public class PlayerController : MonoBehaviour
         {
             OrbManager.instance.OrbCollected();
             Destroy(collision.gameObject);
-        }
+		}
         if (collision.gameObject.CompareTag("Enemy"))
         {
             if (killEnemy)
