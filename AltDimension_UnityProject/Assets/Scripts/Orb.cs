@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Orb : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private AudioSource myAudioSource;
+    public AudioClip orbNoise;
     void Start()
     {
-        
+        myAudioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            AudioClip clip = orbNoise;
+            myAudioSource.PlayOneShot(clip);
+        }
     }
+   
 }
