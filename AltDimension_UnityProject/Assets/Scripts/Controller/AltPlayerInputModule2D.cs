@@ -8,6 +8,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Module for player controller input when using a PlatformController2D. Uses standart Horizontal and Vertical input axis as well as Jump button.
@@ -33,6 +34,10 @@ public class AltPlayerInputModule2D : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow))
         {
             controller.inputJump = true;
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            SceneManager.LoadScene("MenuScene");
         }
     }
 }
