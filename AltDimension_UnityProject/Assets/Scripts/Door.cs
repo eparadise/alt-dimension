@@ -58,6 +58,10 @@ public class Door : MonoBehaviour
         }
         GameManager myGameManager = FindObjectOfType<GameManager>();
         myGameManager.SetPrevScene(SceneManager.GetActiveScene().name);
+        if (myGameManager.GetLastUnlocked() < SceneManager.GetActiveScene().buildIndex + 1)
+        {
+            myGameManager.SetLastUnlocked(SceneManager.GetActiveScene().buildIndex + 1);
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

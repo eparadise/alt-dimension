@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Level3Button : MonoBehaviour
 {
+    public GameManager myGameManager;
     public void Menu()
     {
-        SceneManager.LoadScene("BeaScene1");
+        if (myGameManager.GetLastUnlocked() >= 6)
+        {
+            SceneManager.LoadScene("BeaScene1");
+        }
     }
 }

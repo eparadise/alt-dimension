@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Level5Button : MonoBehaviour
 {
+    public GameManager myGameManager;
     public void Menu()
     {
-        SceneManager.LoadScene("DelaneyScene2");
+        if (myGameManager.GetLastUnlocked() >= 8)
+        {
+            SceneManager.LoadScene("DelaneyScene2");
+        }
     }
 }
