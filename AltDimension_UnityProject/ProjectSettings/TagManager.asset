@@ -8,6 +8,7 @@ TagManager:
   - Orb
   - Door
   - Enemy
+  - Bear
   layers:
   - Default
   - TransparentFX

@@ -96,6 +96,27 @@ public class PlayerController : MonoBehaviour
 
             }
         }
+        if (collision.gameObject.CompareTag("Bear"))
+		{
+			if (!isHurt)
+			{
+
+				lives--;
+				AudioClip clip = hurtNoise;
+				myAudioSource.PlayOneShot(clip);
+				//hpanel.UpdateHearts(lives);
+				if (lives == 0)
+				{
+					hpanel.UpdateHearts(lives);
+					Die();
+				}
+				else
+				{
+					mainCamera.GetComponent<FollowCamera>().CameraShake();
+					StartCoroutine(HurtRoutine());
+				}
+			}
+		}
     }
 
     IEnumerator HurtRoutine()
