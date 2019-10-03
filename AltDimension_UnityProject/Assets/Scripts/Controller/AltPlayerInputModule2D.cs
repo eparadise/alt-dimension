@@ -35,9 +35,5 @@ public class AltPlayerInputModule2D : MonoBehaviour
         {
             controller.inputJump = true;
         }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            SceneManager.LoadScene("MenuScene");
-        }
     }
 }

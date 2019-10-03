@@ -33,6 +33,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            lives = 3;
+            SceneManager.LoadScene("MenuScene");
+        }
         hpanel.UpdateHearts(lives);
         killEnemy = false;
         RaycastHit2D jumpingOn = Physics2D.CircleCast(transform.position, 0.7f / 2.0f, Vector2.down, 1, snakeLayerMask);
