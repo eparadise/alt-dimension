@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -70,6 +71,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Orb"))
         {
+            collision.gameObject.GetComponent<Orb>().Collected();
             OrbManager.instance.OrbCollected();
             Destroy(collision.gameObject);
 		}

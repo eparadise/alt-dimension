@@ -10,6 +10,7 @@ public class OrbManager : MonoBehaviour
     private int orbCount = 0;
     private Door myDoor;            // could be public- only can't access object in scene in prefab
 
+
     private void Awake()
     {
         instance = this;   

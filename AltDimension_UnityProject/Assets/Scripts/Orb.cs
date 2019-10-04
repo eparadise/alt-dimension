@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,12 +14,9 @@ public class Orb : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void Collected()
     {
-        
-            AudioClip clip = orbNoise;
-            myAudioSource.PlayOneShot(clip);
-        
+        AudioClip clip = orbNoise;
+        myAudioSource.PlayOneShot(clip);
     }
-   
 }
