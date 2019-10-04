@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
 
-    private static int lives = 3;
+    private static int lives = 3000;
     private SpriteRenderer mySpriteRenderer;
     private UIHealthPanel hpanel;
     public LayerMask snakeLayerMask;
@@ -118,8 +118,12 @@ public class PlayerController : MonoBehaviour
 				}
 				else
 				{
-					mainCamera.GetComponent<FollowCamera>().CameraShake();
-					StartCoroutine(HurtRoutine());
+                    if (!isHurt)
+                    {
+                        mainCamera.GetComponent<FollowCamera>().CameraShake();
+                        StartCoroutine(HurtRoutine());
+                    }
+					
 				}
 			}
 		}

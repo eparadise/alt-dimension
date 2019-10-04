@@ -35,6 +35,7 @@ public class FollowCamera : MonoBehaviour
         if (shakeTimer > 0)
         {
             pos += Random.onUnitSphere * 0.2f;
+            pos.z = transform.position.z;
             shakeTimer -= Time.deltaTime;
         }
         transform.position = pos;
