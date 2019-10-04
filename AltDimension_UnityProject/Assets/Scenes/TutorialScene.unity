@@ -1122,6 +1122,11 @@ PrefabInstance:
       propertyPath: orbNoise
       value: 
       objectReference: {fileID: 8300000, guid: eb91c91b2a6d34ce89f8e2788cc98df1, type: 3}
+    - target: {fileID: 4018916382291192440, guid: e66c9fc0da3bb481fa1e9aca8d7da233,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e66c9fc0da3bb481fa1e9aca8d7da233, type: 3}
 --- !u!1001 &1557315392
