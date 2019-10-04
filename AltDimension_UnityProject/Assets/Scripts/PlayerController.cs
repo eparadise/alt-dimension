@@ -73,7 +73,9 @@ public class PlayerController : MonoBehaviour
         {
             collision.gameObject.GetComponent<Orb>().Collected();
             OrbManager.instance.OrbCollected();
-            Destroy(collision.gameObject);
+            collision.enabled = false;
+
+            Destroy(collision.gameObject, 0.2f);
 		}
         if (collision.gameObject.CompareTag("Enemy"))
         {
