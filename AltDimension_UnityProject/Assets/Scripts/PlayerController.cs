@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
 
-    private static int lives = 3000;
+    private static int lives = 3;
     private SpriteRenderer mySpriteRenderer;
     private UIHealthPanel hpanel;
     public LayerMask snakeLayerMask;
